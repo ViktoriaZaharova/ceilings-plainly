@@ -1,0 +1,2449 @@
+@import "fonts"
+@import "vars"
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+*::-webkit-input-placeholder
+  color: #666
+  opacity: 1
+
+*:-moz-placeholder
+  color: #666
+  opacity: 1
+
+*::-moz-placeholder
+  color: #666
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: #666
+  opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  color: #666
+
+body input:required:valid,
+body textarea:required:valid
+  color: #666
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+  content: ''
+  content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+body
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: normal
+  font-family: $default-font
+  background: #FAF9F9
+  color: $black
+
+body, html
+  overflow-x: hidden
+
+img
+  display: block
+  max-width: 100%
+  height: auto
+
+a
+  display: block
+  text-decoration: none
+  transition: .3s ease
+  //&:hover, &:focus
+  //  background: $gradient1
+  //  -webkit-background-clip: text
+  //  -webkit-text-fill-color: transparent
+
+button, textarea, select, input
+  outline: none
+  box-shadow: none
+  transition: .3s ease
+  &:hover
+    outline: none
+
+button
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+
+h1
+  text-align: center
+  position: relative
+  padding: 35px 0 21px
+  font:
+    weight: bold
+    size: 64px
+  line-height: 75px
+  color: $black
+  &:before
+    content: ''
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translate(-50%,0)
+    background: #FFD366
+    height: 8px
+    width: 184px
+
+h2
+  font:
+    weight: bold
+    size: 48px
+  line-height: 53px
+  position: relative
+  padding: 0 0 33px 0
+  color: #fff
+  margin: 0 0 64px
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    background: #FFD366
+    height: 8px
+    width: 184px
+
+
+.text-center
+  text-align: center
+
+.links-accent, .color-accent
+  background: $gradient1
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+
+.bg-yellow
+  background: $yellow
+
+.bg-green
+  background: linear-gradient(172.56deg, #3DA799 0%, #3FAB9C 100%)
+  border-radius: 5px
+  display: flex
+  align-items: center
+  color: #fff
+  padding: 9px 16px
+  box-sizing: border-box
+  .icon
+    margin: 0 0 0 13px
+  &:hover
+    background: linear-gradient(172.56deg, #75CFC3 0%, #5ABFB2 100%)
+
+.btn-accent
+  background: $yellow
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+  box-shadow: 0 10px 30px rgba(255, 211, 102, 0.2)
+  border-radius: 5px
+  border: none
+  padding: 19px 30px
+  font:
+    weight: 600
+    size: 16px
+  color: $black
+  position: relative
+  z-index: 2
+  cursor: pointer
+  &:hover
+    background: #FFDD8A
+
+.logo
+  padding: 11px 0 6px
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 99px
+  text-align: center
+  font:
+    size: 12px
+    weight: bold
+  line-height: 15px
+  text-transform: uppercase
+  .text
+    background: $gradient1
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    margin: 5px 0 0 0
+
+.icon-phone
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  background: linear-gradient(147.82deg, #3DA799 0%, #3FAB9C 100%)
+  width: 31px
+  height: 31px
+  border-radius: 50%
+  margin: 0 45px 0 0
+  cursor: pointer
+  &:before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 49%
+    transform: translate(-50%,-50%)
+    background: linear-gradient(147.82deg, #3DA799 0%, #3FAB9C 100%)
+    opacity: 0.2
+    width: 52px
+    height: 52px
+    border-radius: 50%
+    z-index: 0
+    transition: .5s ease
+  &:after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 49%
+    transform: translate(-50%,-50%)
+    background: linear-gradient(147.82deg, #3DA799 0%, #3FAB9C 100%)
+    opacity: 0.2
+    width: 41px
+    height: 41px
+    border-radius: 50%
+    z-index: 1
+    transition: .5s ease
+  svg
+    position: relative
+    z-index: 2
+  &:hover
+    background: linear-gradient(147.82deg, #5ABFB2 0%, #75CFC3 100%)
+    &:before
+      width: 60px
+      height: 60px
+      background: linear-gradient(147.68deg, #3DA799 0%, #3FAB9C 100%)
+    &:after
+      width: 46px
+      height: 46px
+      background: linear-gradient(147.56deg, #3DA799 0%, #3FAB9C 100%)
+
+
+.main-menu
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  li
+    &:last-child
+      a
+        margin: 0
+    a
+      font-weight: 600
+      color: $black
+      margin: 0 26px 0 0
+      &:hover
+        background: $gradient1
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+
+.current
+  background: $gradient1
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.container
+  position: relative
+  max-width: 1230px
+  padding: 0 15px
+  display: flex
+  flex-wrap: wrap
+  margin: 0 auto
+
+//header
+header
+  z-index: 5
+  position: relative
+  .container
+    justify-content: space-between
+    align-items: center
+    .logo
+      margin: 0 auto 0 0
+
+.btn-category
+  margin: 0 33px 0 0
+  cursor: pointer
+
+.btn-category.in
+  .icon
+    transform: rotate(180deg)
+
+
+.box-callback
+  margin: 0 0 0 auto
+  display: flex
+  align-items: center
+  .text
+    p
+      font-size: 14px
+
+.box-callback-mobile
+  display: none
+
+.phone
+  font-weight: 600
+  font-size: 18px
+  color: $black
+
+
+
+//section main
+main
+  padding: 140px 0 0
+  position: relative
+  background: url("../img/bg1.jpeg") no-repeat center 40%
+    size: cover
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    background: url("../img/decor1.png") no-repeat center -1px
+      size: contain
+    width: 100%
+    height: 100%
+    transform: rotate(180deg) scale(-1,1)
+  .bg-wrapper
+    top: -100%
+    max-height: 749px
+    img
+      width: 100%
+  .container
+    flex-direction: column
+    align-items: center
+    z-index: 2
+    .box-callback
+      display: none
+
+.bg-wrapper
+  z-index: 2
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+
+
+.main-title
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  p
+    text-transform: uppercase
+    font:
+      weight: 600
+      size: 18px
+    line-height: 23px
+  span
+    display: inline-block
+    width: 100%
+    text-align: center
+    margin: 29px auto 0
+    font:
+      size: 24px
+      weight: 600
+
+.list-advantages
+  width: 100%
+  margin: 52px 0 49px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  li
+    position: relative
+    display: flex
+    align-items: center
+    font:
+      weight: 600
+      size: 18px
+    max-width:  375px
+  .circle
+    width: 40px
+    min-width: 40px
+    height: 40px
+    box-shadow: 0 10px 30px #43A79A
+    display: inline-block
+    margin: 0 22px 0 0
+    position: relative
+    border-radius: 50%
+    background: rgba(#E0D9D1, .5)
+    &:before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      width: 25px
+      height: 25px
+      min-width: 25px
+      border-radius: 50%
+      background: linear-gradient(148.11deg, #3DA799 0%, #3FAB9C 100%)
+      z-index: 2
+    //&:after
+    //  content: ''
+    //  position: absolute
+    //  border-radius: 50%
+    //  background: #E0D9D1
+    //  opacity: .5
+    //  left: 50%
+    //  top: 50%
+    //  transform: translate(-50%,-50%)
+    //  width: 100%
+    //  height: 100%
+
+.advantages-wrapper
+  width: 100%
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+  justify-content: center
+
+.advantages-box
+  display: flex
+  flex-direction: column
+  width: 183px
+  height: 232px
+  background: $gradient2
+  border-radius: 5px
+  position: relative
+  overflow: hidden
+  padding: 24px 15px 18px 18px
+  box-sizing: border-box
+  box-shadow: 0 4px 15px rgba(30, 51, 63, 0.3)
+  margin: 0 11px 30px
+  &:before
+    content: ''
+    position: absolute
+    right: -65px
+    bottom: -106px
+    width: 262px
+    height: 262px
+    background: url("../img/circle.svg") no-repeat center
+      size: contain
+  p
+    color: $white
+    font:
+      weight: bold
+      size: 18px
+    margin: 0 0 37px
+  &:nth-child(even)
+    p
+      margin: 37px 0 0 0
+
+
+//section cost-technology
+.cost-technology
+  padding: 90px 0 0
+  position: relative
+  background: url("../img/bg12.png") no-repeat center
+    size: cover
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: -10px
+    width: 100%
+    height: 50px
+    background: linear-gradient(to bottom, rgba(0,54,71,1) 0%,rgba(15,57,72,1) 100%)
+    z-index: 1
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+
+    z-index: 1
+  .container
+    z-index: 3
+    flex-direction: column
+    align-items: center
+    h2
+      width: 100%
+      text-align: left
+
+.cost-examples__content
+  width: 100%
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+
+.bg-gradient1
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background: linear-gradient(143.84deg, #FAF9F9 0%, #E0D9D1 100%)
+    z-index: 1
+    opacity: .3
+    left: 0
+    top: 0
+
+.bg-gradient2
+  .text
+    h3, .price
+      color: #fff
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background: linear-gradient(160.06deg, #3EA89A 0%, #25ABD4 100%)
+    z-index: 1
+    opacity: .7
+    left: 0
+    top: 0
+
+.bg-gradient3.cost-examples__box
+  background:  #F8F4EF
+  .image
+    align-items: flex-start
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background: linear-gradient(-270deg, #F8F4EF 20%, rgba(255, 255, 255, 0) 80%)
+    z-index: 1
+    left: 0
+    top: 0
+
+.bg-gradient4
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background: linear-gradient(-67.55deg, rgba(249, 205, 96, 0) 35%, #FFD366 65%)
+    z-index: 1
+    left: 0
+    top: 0
+
+.bg-gradient5
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background: linear-gradient(-30.23deg, rgba(146, 155, 168, 0.25) 31.04%, #929BA8 54.04%)
+    z-index: 1
+    left: 0
+    top: 0
+    opacity: .3
+
+.bg-gradient6
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background: linear-gradient(144.52deg, #3EA89A 30%, rgba(37,177,212,.3) 50%)
+    z-index: 1
+    left: 0
+    top: 0
+    opacity: .3
+
+.cost-examples__box-width.bg-gradient5
+  .image
+    img
+      max-width: 115%
+
+.bg-gradient4.cost-examples__box-width
+  background: rgba(249, 205, 96, 1)
+  .image
+    left: 15%
+
+.cost-examples__box
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  z-index: 2
+  padding: 22px 15px 15px
+  box-sizing: border-box
+  .text
+    width: 100%
+    height: 100%
+    z-index: 2
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    position: relative
+  .image
+    width: 100%
+    height: 100%
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    top: 0
+    left: 0
+    .image2
+      position: absolute
+      z-index: 2
+      right: -54%
+      bottom: -10px
+      width: 414px
+      height: 185px
+  .icon-arrow
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    bottom: 0
+    right: 0
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    background: #FFD366
+  .price, h3
+    color: #263C49
+    font:
+      size: 24px
+      weight: bold
+    line-height: 29px
+
+
+
+.cost-examples__box-height
+  width: 395px
+  height: 464px
+  .image
+    img
+      height: 100%
+      max-width: none
+
+.cost-examples__box-height2
+  .text
+    h3, .price
+      color: #fff
+  .image
+    transform: rotate(-2.39deg)
+    align-items: flex-start
+    top: -20px
+    left: 20%
+    img
+      max-width: none
+      height: 649px
+
+.cost-examples__box-width
+  width: 803px
+  height: 232px
+  .image
+    align-items: flex-start
+
+.cost-examples__box-min
+  width: 398px
+  height: 232px
+
+.cost-examples__box-min2
+  width: 405px
+  height: 232px
+
+
+.cost-examples__box-group
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  width: 803px
+  .cost-examples__box
+    padding: 22px 15px 15px 29px
+
+.cost-examples__box-group2
+  width: 793px
+  .cost-examples__box-min
+    width: 395px
+    .image
+      align-items: flex-start
+      justify-content: flex-end
+      left: 33%
+      img
+        max-width: none
+        height: 568px
+  .cost-examples__box-min2
+    width: 398px
+    background: transparent
+    .image
+      justify-content: center
+      left: 0
+  .cost-examples__box-width
+    width: 100%
+
+.technology-kaab
+  width: 100%
+  position: relative
+  z-index: 2
+  .container
+    flex-direction: column
+    align-items: flex-start
+    z-index: 2
+    padding: 130px 15px 220px
+    &:before
+      content: ''
+      position: absolute
+      bottom: -12%
+      right: 0
+      background: url("../img/man.png") no-repeat center
+        size: contain
+      width: 395px
+      height: 704px
+
+
+.advantages-technology-kaab
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+
+.list-kaab
+  margin: 0 86px 0 0
+  li
+    color: $white
+    font-weight: 600
+    font-size: 18px
+    margin: 0 0 25px
+
+.logo-kaab
+  width: 167px
+
+.list-disc
+  li
+    position: relative
+    padding: 0 0 0 35px
+    box-sizing: border-box
+    &:last-child
+      margin: 0
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translate(0,-50%)
+      width: 18px
+      height: 18px
+      background: #3EA89A
+      border-radius: 50%
+      box-shadow: 0px 4px 25px rgba(62, 168, 154, 0.3)
+
+
+.video-wrapper-box
+  display: flex
+  align-items: center
+  margin: 90px 0 0 0
+  .text
+    margin: 0 0 0 40px
+    a, p
+      font-size: 18px
+      font-weight: 600
+  .links-accent
+    border-bottom: 1px dashed #3EA89A
+    margin: 0 0 12px
+
+.icon-video
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  background: linear-gradient(147.82deg, #3DA799 0%, #3FAB9C 100%)
+  width: 89px
+  height: 89px
+  border-radius: 50%
+  margin: 0 45px 0 0
+  cursor: pointer
+
+  &:before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 49%
+    transform: translate(-50%,-50%)
+    background: linear-gradient(147.82deg, #3DA799 0%, #3FAB9C 100%)
+    opacity: 0.2
+    width: 120px
+    height: 120px
+    border-radius: 50%
+    z-index: 0
+    transition: .5s ease
+  &:after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 49%
+    transform: translate(-50%,-50%)
+    background: linear-gradient(147.82deg, #3DA799 0%, #3FAB9C 100%)
+    opacity: 0.2
+    width: 152px
+    height: 152px
+    border-radius: 50%
+    z-index: 1
+    transition: .5s ease
+  svg
+    position: relative
+    z-index: 2
+  &:hover
+    background: linear-gradient(147.82deg, #5ABFB2 0%, #75CFC3 100%)
+    &:before
+      width: 140px
+      height: 140px
+      background: linear-gradient(147.68deg, #3DA799 0%, #3FAB9C 100%)
+    &:after
+      width: 162px
+      height: 162px
+      background: linear-gradient(147.56deg, #3DA799 0%, #3FAB9C 100%)
+
+
+//section form
+.price-form
+  padding: 90px 0
+  box-sizing: border-box
+  position: relative
+  background: #00A99A
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    margin: 0 auto
+    bottom: -140px
+    background: url("../img/decor2.png") no-repeat center
+      size: contain
+    height: 485px
+    width: 100%
+    z-index: 2
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    margin: 0 auto
+    top: -140px
+    background: url("../img/decor2.png") no-repeat center
+      size: contain
+    height: 485px
+    width: 100%
+    z-index: 2
+    transform: scale(-1,1) rotate(180deg)
+  .container
+    z-index: 3
+
+
+.form
+  display: flex
+  flex-direction: column
+  align-items: center
+  background: #FAF9F9
+  box-sizing: border-box
+  border-radius: 5px
+  padding: 38px 44px 30px
+  position: relative
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15)
+  width: 488px
+  height: 296px
+  &:before
+    content: ''
+    position: absolute
+    left: 8px
+    top: 10px
+    width: calc(100% - 16px)
+    height: calc(100% - 20px)
+    background: transparent
+    border: 1px dashed #3EA89A
+    border-radius: 5px
+  h3
+    font-weight: 600
+    text-align: center
+    font-size: 18px
+    line-height: 22px
+    color: #14141E
+    margin: 0 auto 30px
+  label
+    margin: 0 0 40px
+    width: 100%
+    position: relative
+    .icon
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translate(0,-50%)
+      opacity: .3
+    input
+      width: 100%
+      padding: 0 0 16px
+      font-size: 14px
+      line-height: 17px
+      color: #14141E
+      background: transparent
+      border: none
+        bottom: 3px solid rgba(#3EA89A, .3)
+      &::placeholder
+        color: #14141E
+    &:last-child
+      margin: 0
+  button
+    position: absolute
+    left: 50%
+    transform: translate(-50%,0)
+    bottom: -25px
+
+
+label
+  display: block
+  position: relative
+
+.price-form__text
+  color: #fff
+  width: calc(100% - 500px)
+  h2
+    padding: 0
+    margin: 0 0 32px
+    &:before
+      display: none
+  .list-disc
+    li
+      margin: 0 0 26px
+      &:last-child
+        margin: 0
+      &:before
+        background: #FFD366
+        box-shadow: 0 4px 20px rgba(255, 211, 102, 0.3)
+
+
+.types-of-ceilings
+  position: relative
+  background: #F8F4EF
+  padding: 150px 0 34px
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: url("../img/bg4.jpeg") no-repeat center top
+      size: cover
+    opacity: .15
+  .container
+    z-index: 2
+    h2
+      color: #333333
+
+.types-of-ceilings__content
+  width: 100%
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+  justify-content: space-between
+
+.types-of-ceilings__box
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  border-radius: 50%
+  background: rgba(62, 168, 154, 0.27)
+  padding: 18px
+  box-sizing: border-box
+  position: relative
+  box-shadow: 0 4px 45px rgba(67, 167, 154, 0.2)
+  .image
+    position: absolute
+    transition: .3s ease
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    border-radius: 50%
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    width: calc(100% - 36px)
+    height: calc(100% - 36px)
+    overflow: hidden
+    img
+      height: 100%
+      max-width: none
+      transition: .3s ease
+  p
+    text-align: center
+    color: #F2F2F2
+    font-size: 18px
+    font-weight: 600
+    line-height: 22px
+    position: relative
+    z-index: 2
+
+.box3
+  margin: 0 24px 0 -15px
+
+.box196
+  width: 196px
+  height: 196px
+
+.box160
+  width: 160px
+  height: 160px
+
+.box1
+  margin: 20px 0 0 0
+
+
+.box226
+  width: 226px
+  height: 226px
+
+
+.box268
+  width: 268px
+  height: 268px
+
+.box2
+  margin: 120px 7px 0
+
+.box5
+  margin: 90px 0 0 0
+
+.box6
+  margin: -100px 0 -100px 0
+
+.box7
+  margin: 20px 0 20px 40px
+
+.box8
+  margin: -120px 20px -120px -20px
+
+.box9
+  margin: -40px 20px -40px 0
+
+.box10
+  margin: 40px 0 40px
+
+.list-dots
+  padding: 0 0 0 20px
+  list-style-type: disc
+
+.questions
+  padding: 137px 0 230px
+  position: relative
+  box-sizing: border-box
+  overflow: hidden
+  h2
+    color: $black
+
+.icon-decoration
+  font-size: 1150px
+  background: url("../img/bg2.jpeg") no-repeat center
+    size: cover
+  color: #333333
+  font-weight: bold
+  -webkit-text-fill-color: transparent
+  -webkit-background-clip: text
+
+.icon-question
+  top: -20%
+  right: -10%
+  opacity: .3
+  position: absolute
+
+.icon-design
+  background: url("../img/cost3.jpeg") no-repeat center
+    size: cover
+  -webkit-text-fill-color: transparent
+  -webkit-background-clip: text
+  font-size: 383px
+  line-height: 417px
+  opacity: .7
+  width: 310px
+  height: 407px
+  font-weight: bold
+  text-transform: uppercase
+
+
+
+.questions-content
+  width: 100%
+  max-width: 997px
+
+.panel_heading
+  box-sizing: border-box
+  margin-bottom: 16px
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05)
+  background: #fff
+  border-radius: 5px
+  width: 100%
+  &:last-child
+    margin-bottom: 0
+  .in
+    .icon
+      transform: rotate(180deg)
+  .block_title
+    padding: 24px 16px 29px 24px
+    box-sizing: border-box
+    transition: .3s ease
+    cursor: pointer
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    .icon
+      transition: .3s ease
+      svg
+        fill: #D5D5D5
+        width: 20px
+        height: 12px
+        path
+          fill: #D5D5D5
+    h3
+      line-height: 20px
+      position: relative
+      font:
+        size: 18px
+        weight: 600
+      padding: 0 10px 0 25px
+      &:before
+        content: ''
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translate(0,-50%)
+        border-radius: 50%
+        background: #3EA89A
+        width: 18px
+        height: 18px
+        box-shadow: 0 4px 25px rgba(62, 168, 154, 0.3)
+  .block_hover
+    padding: 0 102px 32px 59px
+    color: #333
+    display: none
+    font-size: 18px
+    line-height: 22px
+    p
+      margin: 0 0 5px
+    ul
+      li
+        margin: 0 0 5px
+
+
+//section contacts
+.contacts
+  background: #263C49
+  padding: 77px 0 30px
+
+.contacts-wrapper
+  display: flex
+  align-items: flex-start
+  justify-content: flex-end
+  flex-wrap: wrap
+  padding: 0 0 0 32%
+  margin: -9% 0 0 0
+
+.contacts-box
+  display: flex
+  align-items: center
+  color: #fff
+  font-size: 18px
+  font-weight: normal
+  margin: 0 0 40px
+  width: 50%
+  a
+    color: #fff
+    font-weight: normal
+  .text
+    max-width: 276px
+  .icon-phone
+    background: #FFD366
+    min-width: 31px
+    &:after, &:before
+      background: #FFD366
+
+    svg
+      fill: #263C49
+      path
+        fill: #263C49
+
+.map
+  width: 100%
+  height: 536px
+  position: relative
+  //background: #263C49
+  overflow: hidden
+  //&:before
+  //  content: ''
+  //  position: absolute
+  //  left: 0
+  //  top: 0
+  //  width: 100%
+  //  height: 20%
+  //  background: linear-gradient(0deg,rgba(32,34,37,0) 0%,#253c49 77%)
+  //  z-index: 2
+  //&:after
+  //  content: ''
+  //  position: absolute
+  //  left: 0
+  //  bottom: -1px
+  //  width: 100%
+  //  height: 20%
+  //  background: linear-gradient(180deg,rgba(32,34,37,0) 0%,#26303e 77%)
+  //  z-index: 2
+  img
+    width: 100%
+  iframe
+    width: 100%
+    height: 100%
+
+.map-section
+  height: 838px
+  img
+    width: 100%
+
+//footer
+footer
+  background: #26303E
+  position: relative
+  display: flex
+  flex-direction: column
+  .logo
+    margin: 0 auto 0 0
+    padding: 0
+    .text
+      color: #515B68
+      background: transparent
+      -webkit-text-fill-color: initial
+    .image
+      svg
+        path
+          fill: #515B68
+      .cl-1
+        fill: #929BA8
+  .container
+    align-items: flex-start
+    justify-content: space-between
+
+
+.footer-top
+  padding: 40px 0
+  .developer-site
+    display: none
+
+.footer-menu, .footer-document
+  li
+    a
+      color: #929BA8
+      margin: 0 0 10px
+      font-size: 14px
+      &:hover
+        background: $gradient1
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+.footer-menu
+  margin: 0 36px 0 0
+  &:nth-child(5)
+    margin: 0
+
+.footer-document
+  max-width: 155px
+  margin: 0 0 0 auto
+
+.footer-bottom
+  border-top: 1px solid rgba(#fff, .2)
+  padding: 15px 0 38px
+  .container
+    justify-content: flex-start
+    a, p
+      color: #929BA8
+    .copyright
+      margin: 0 86px 0 80px
+    a
+      &:hover
+        background: $gradient1
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+.developer-site
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  justify-content: flex-start
+  color: #929BA8
+  a
+    margin: 0 0 0 20px
+    color: #929BA8
+
+
+//drop menu
+.category-ceilings
+  position: absolute
+  left: 0
+  top: 75px
+  z-index: 20
+  border-radius: 5px
+  background: #fff
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1)
+  box-sizing: border-box
+  padding: 25px 25px 49px 30px
+  display: none
+  align-items: flex-start
+  justify-content: flex-start
+  &:after
+    content: ''
+    position: absolute
+    left: 123px
+    top: -9px
+    width: 0
+    height: 0
+    border-left: 17px solid transparent
+    border-right: 17px solid transparent
+    border-bottom: 9px solid #fff
+
+
+
+.category-ceilings__box
+  display: flex
+  flex-direction: column
+  margin: 0 20px 0 0
+  &:last-child
+    margin: 0
+
+.category-ceilings__name
+  display: flex
+  align-items: center
+  .icon
+    min-width: 24px
+    margin: 0 9px 0 0
+  h3
+    color: #14141E
+    line-height: 22px
+    font-weight: 600
+    font-size: 18px
+  .icon-arrow
+    margin: 0 0 0 auto
+    display: none
+    svg
+      width: 16px
+      height: 10px
+      path
+        fill: #D4D4D4
+
+.category-ceilings__box.open
+  .category-ceilings__name
+    .icon-arrow
+      svg
+        transform: rotate(180deg)
+  .category-ceilings__menu
+    display: block
+
+
+.category-ceilings__menu
+  margin: 10px 0 0 0
+  li
+    a
+      display: flex
+      align-items: center
+      justify-content: space-between
+      font-size: 14px
+      line-height: 17px
+      color: #4F4F4F
+      padding: 7px 0
+      border-bottom: 1px solid #E1E6EB
+      transition: .3s ease
+      min-width: 255px
+
+      .icon-arrow
+        margin: 0 0 0 10px
+        svg
+
+          path
+            fill: #E1E6EB
+            transition: .3s ease
+      &:hover
+        color: #3EA89A
+        font-weight: 600
+        -webkit-text-fill-color: initial
+        .icon-arrow
+          svg
+            path
+              fill: #3EA89A
+
+input::-webkit-contacts-auto-fill-button
+  visibility: hidden
+  display: none !important
+  pointer-events: none
+  position: absolute
+  right: 0
+
+
+.category-menu-wrapper
+  position: relative
+
+
+//page content
+.section-page
+  padding: 120px 0 200px
+  z-index: 2
+  position: relative
+  .container
+    flex-direction: column
+    h2
+      color: $black
+  h2
+    padding: 21px 0 0 0
+    margin: 0 0 58px
+    &:before
+      bottom: auto
+      top: 0
+
+.breadcrumbs
+  display: flex
+  align-items: center
+  margin: 0 0 28px
+  position: relative
+  z-index: 4
+  li
+    a
+      color: #333333
+      font-size: 16px
+      font-weight: 600
+      &:hover
+        color: $gradient1
+        background: $gradient1
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+    .icon-arrow
+      margin: 0 10px
+
+
+
+.ceilings-kitchen
+  z-index: 3
+  position: relative
+  background: url("../img/bg15.jpeg") no-repeat center
+    size: cover
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: -5px
+    background: url(../img/decor4.png) no-repeat center -1px
+    background-size: contain
+    width: 100%
+    height: 100%
+    -webkit-transform: rotate(180deg) scale(-1, 1)
+    transform: rotate(180deg) scale(-1, 1)
+    z-index: 2
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    z-index: 1
+    background: linear-gradient(180.53deg, rgba(255, 255, 255, 0.5) 1.79%, #F8F4EF 89.51%)
+  .container
+    z-index: 2
+
+
+.ceilings-description__image
+  position: relative
+  width: 376px
+  height: 248px
+  .img
+    width: 100%
+    height: 100%
+    overflow: hidden
+    position: relative
+    z-index: 2
+  &:before
+    content: ''
+    position: absolute
+    right: -8px
+    bottom: -8px
+    width: 365px
+    height: 248px
+    background: #FFD366
+
+.ceilings-description__text
+  padding: 0 0 0 32px
+  width: calc(100%  - 376px)
+  font-size: 18px
+  line-height: 32px
+  p
+    margin: 0 0 10px
+  strong
+    font-weight: 600
+    margin: 0 0 10px
+    display: inline-block
+  ul
+    margin: 0 0 10px
+
+.ceilings-description
+  width: 100%
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+  justify-content: flex-start
+
+.cost-estimate-wrapper
+  width: 100%
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  flex-wrap: wrap
+  margin: 30px 0 0 0
+
+.cost-estimate-table
+  display: flex
+  flex-direction: column
+  width: 590px
+  font-size: 18px
+
+.table-header, .table-body
+  display: flex
+  align-items: center
+  justify-content: space-between
+.table-header
+  color: #FAF9F9
+  font-weight: 600
+  padding: 15px 12px
+  background: linear-gradient(177.1deg, #3DA799 0%, #3FAB9C 100%)
+.price
+  min-width: 142px
+.table-body
+  border-bottom: 1px solid rgba(#333, .2)
+  padding: 15px 12px 7px 10px
+
+//section gallery-reviews
+.gallery-reviews
+  background: url("../img/bg13.png") no-repeat center
+    size: cover
+  position: relative
+  z-index: 2
+  overflow: hidden
+  padding: 90px 0
+  display: flex
+  flex-direction: column
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: -10px
+    width: 100%
+    height: 50px
+    background: linear-gradient(to bottom, #002d3b 0%, #0a303c 100%)
+    z-index: 1
+  .container
+    z-index: 2
+
+.gallery-price
+  width: 100%
+
+
+.gallery-price-wrapper
+  width: 100%
+  display: flex
+  align-items: stretch
+  flex-wrap: wrap
+  justify-content: space-between
+
+.gallery-price-slider__wrapper
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.gallery-price-max
+  position: relative
+  width: 792px
+  height: 512px
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  .price
+    width: 274px
+    height: 83px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    position: absolute
+    padding: 0 0 0 40px
+    left: 0
+    top: 25px
+    color: #333333
+    font-size: 36px
+    font-weight: 600
+    line-height: 42px
+    background: url("../img/decor.svg") no-repeat center
+      size: contain
+  .image
+    width: 100%
+    height: 100%
+    img
+      max-width: none
+      height: 100%
+
+.gallery-price-box
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+  justify-content: space-between
+  width: 100%
+  .img
+    width: 181px
+    height: 118px
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    margin: 9px 0
+    img
+      height: 100%
+      max-width: none
+
+.gallery-price-slider
+  width: 383px
+
+.slick-slide
+  outline: none
+
+.arrow-slide
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  z-index: 2
+  cursor: pointer
+  svg
+    width: 33px
+    height: 20px
+    path
+      fill: $yellow
+
+.arrow-next
+  margin: 20px 0 0 0
+
+.arrow-prev
+  margin: 0 0 20px
+  svg
+    transform: rotate(180deg)
+
+
+.page-content
+  background: #26303E
+
+.footer
+  padding: 100px 0 0 0
+
+//section reviews
+.reviews
+  padding: 120px 0
+
+.reviews-box
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-wrap: wrap
+  background: #F8F4EF
+  position: relative
+  margin: 0 auto
+  max-width: 994px
+  &:after
+    content: ''
+    position: absolute
+    left: 108px
+    bottom: -19px
+    width: 0
+    height: 0
+    border-left: 17px solid transparent
+    border-right: 17px solid transparent
+    border-top: 20px solid #F8F4EF
+
+.reviews-message
+  font-size: 18px
+  line-height: 23px
+  padding: 64px 36px 40px 40px
+  width: calc(100% - 283px)
+  p
+    margin: 0 0 15px
+    &:last-child
+      margin: 0
+
+.reviews-user
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15)
+  background: #FAF9F9
+  width: 283px
+  padding: 56px 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  .photo
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    overflow: hidden
+    width: 120px
+    height: 120px
+    margin: 0 auto 24px
+    img
+      height: 100%
+      max-width: none
+  .name
+    font-weight: 600
+    text-align: center
+    font-size: 18px
+  .city
+    text-align: center
+    font-size: 16px
+    margin: 10px 0
+  p
+    text-align: center
+    font-size: 14px
+
+.reviews-slider, .our-team-slider
+  width: 100%
+  .slide
+    padding: 20px 0
+
+.reviews-arrows, .our-team-arrows
+  width: 100%
+  position: relative
+  .arrow-slide
+    position: absolute
+    top: 50%
+    transform: translate(0,-50%) rotate(-90deg)
+    width: 33px
+    height: 20px
+    margin: 0
+    svg
+      path
+        fill: #3EA89A
+  .arrow-prev
+    left: 0
+  .arrow-next
+    right: 0
+
+//TABS
+.tabs__content
+  display: none /* по умолчанию прячем все блоки */
+  flex-direction: column
+  align-items: flex-start
+  position: relative
+
+.tabs__content.active
+  display: flex /* по умолчанию показываем нужный блок */
+
+.tabs-ceilings
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+  justify-content: flex-start
+  .tabs-left
+    font-size: 18px
+    font-weight: 600
+    line-height: 23px
+    h6
+      margin: 5px 0 24px
+  .tabs__caption
+    li.active
+      border-color: #3EA89A
+      color: #14141E
+    li
+      color: rgba(#14141E, .5)
+      padding: 9px 20px
+      border: 2px solid transparent
+        radius: 70px
+      margin: 0 0 30px
+      text-align: center
+      width: fit-content
+      cursor: pointer
+  .tabs-right
+    width: calc(100% - 180px)
+    padding: 0 0 0 20px
+
+.table-wrapper
+  position: relative
+  overflow-x: hidden
+  width: 100%
+  margin: 0 auto
+
+.manufacturer-table
+  width: 100%
+  min-width: 570px
+  .table-header, .table-body
+    justify-content: flex-start
+  .table-body
+    padding: 15px 90px 7px 24px
+  .name
+    width: 30%
+  .price
+    width: 39%
+    margin: 0 0 0 auto
+  .table-header
+    padding: 10px 90px 10px 24px
+    align-items: flex-start
+    .width
+      max-width: 190px
+  .price
+    display: flex
+    flex-direction: column
+    .price-wrapper
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: 0 10px 0 0
+      span
+        width: 20%
+
+//section matt-ceilings
+.matt-ceilings
+  background: url("../img/bg14.jpeg") no-repeat center
+    size: cover
+  padding: 120px 0
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    z-index: 1
+    background: linear-gradient(180.53deg, rgba(255, 255, 255, 0.5) 1.79%, #F8F4EF 89.51%)
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    background: url("../img/decor4.png") no-repeat center -1px
+      size: contain
+    width: 100%
+    height: 100%
+    transform: rotate(180deg) scale(-1,1)
+    z-index: 2
+  .container
+    z-index: 3
+
+
+//page price
+.page-content-price
+  background: #fffbf4
+  .price-form
+    &:before
+      display: none
+
+
+.btn-downloads
+  display: flex
+  align-items: center
+  font-size: 14px
+  line-height: 17px
+  color: #333333
+  margin: 0 0 16px 0
+  &:hover
+    background: linear-gradient(148.11deg, #3DA799 0%, #3FAB9C 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+  .text
+    text-decoration: underline
+    margin: 0 0 0 7px
+
+
+//section section-price
+.section-price-category
+  padding: 120px 0
+  position: relative
+  &:first-child
+    z-index: 3
+  .bg-wrapper
+    position: absolute
+    z-index: 3
+    img
+      width: 100%
+  //&:before
+  //  position: absolute
+  //  content: ''
+  //  padding: 0
+  //  top: 70px
+  //  width: 100%
+  //  height: 2px
+  //  background: rgba(255, 255, 255, 0.5)
+  //  z-index: 2
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 952px
+    background: url("../img/bg8.png") no-repeat center 84%
+      size: cover
+
+    z-index: 1
+  .container
+    z-index: 3
+
+a.right-arrow
+  display: none
+
+.title-wrapper
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin: 0 0 34px
+  .types-of-ceilings__box
+    position: relative
+
+.section-price-category2
+  background: #fffbf4
+  &:before
+    display: none
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: -50px
+    width: 100%
+    height: 1012px
+    background: url("../img/bg9.png") no-repeat center 11%
+      size: cover
+    z-index: 1
+
+.section-price-category4
+  background: #fffbf4
+  &:before
+    display: none
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: -140px
+    width: 100%
+    height: 1012px
+    background: url("../img/bg9.png") no-repeat center 11%
+      size: cover
+    z-index: 1
+
+.section-price-category3
+  background: rgba(255, 251, 244, 1)
+  z-index: 2
+  padding: 100px 0 60px
+  &:before, &:after
+    display: none
+
+
+//level-ceilings
+.level-ceilings
+  background: url("../img/bg14.jpeg") no-repeat center
+    size: cover
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    z-index: 1
+    background: linear-gradient(180.53deg, rgba(255, 255, 255, 0.5) 1.79%, #F8F4EF 89.51%)
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: -5px
+    background: url("../img/decor4.png") no-repeat center -1px
+      size: contain
+    width: 100%
+    height: 100%
+    transform: rotate(180deg) scale(-1,1)
+    z-index: 2
+  .container
+    z-index: 2
+
+.section-services
+  background: #223540
+  position: relative
+  padding: 0
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: url("../img/bg2.jpeg") no-repeat center top
+      size: cover
+    opacity: .05
+
+
+.section-services-wrapper
+  .container
+    flex-direction: column
+    color: #fff
+    h2
+      color: #F2F2F2
+      position: relative
+      z-index: 2
+  .breadcrumbs
+    margin: 0 0 61px
+    li
+      a
+        color: #F2F2F2
+
+.image-decoration
+  width: 376px
+  height: 248px
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    width: 372px
+    height: 246px
+    bottom: -8px
+    right: -8px
+    background: #3EA89A
+  .img
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    position: relative
+    z-index: 2
+    img
+      height: 100%
+      max-width: none
+
+.services-box
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+  justify-content: flex-start
+  margin: 0 0 58px
+  line-height: 23px
+  font-size: 18px
+  position: relative
+  .icon-design
+    position: absolute
+    left: 0
+    top: -85%
+    z-index: -1
+  .text
+    width: calc(100% - 390px)
+    padding: 0 0 0 36px
+    p
+      margin: 0 0 10px
+      &:last-child
+        margin: 0
+    .list-disc
+      li
+        margin: 0 0 38px
+        font-weight: 600
+        font-size: 18px
+        &:before
+          background: #FFD366
+          box-shadow: 0 4px 20px rgba(255, 211, 102, 0.3)
+
+.ceiling-design
+  padding: 117px 0 109px
+  h2
+    padding: 20px 0 0 308px
+    &:before
+      left: 308px
+  .services-box
+    padding: 0 0 0 210px
+    .icon-design
+      left: -210px
+  .services-description
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    flex-wrap: wrap
+    p
+      width: 49%
+
+
+.services-description
+  font-size: 18px
+  line-height: 23px
+
+.selection-materials
+  padding: 87px 0 119px
+  background: rgba(255, 255, 255, 0.1)
+  .services-box
+    padding: 0
+    align-items: flex-end
+    .text
+      padding: 0 226px 0 0
+      position: relative
+      z-index: 2
+    .icon-design
+      left: -152px
+      top: -256px
+
+.ceiling-repair
+  padding: 86px 0 0
+  .services-box
+    padding: 0
+    .text
+      padding: 0 0 0 226px
+      margin: -17% 0 17% 0
+    .icon-design
+      right: -244px
+      top: -205px
+      left: auto
+  h2
+    margin: 0 0 140px
+
+
+.draining
+  padding: 105px 0 188px
+  background: rgba(255, 255, 255, 0.1)
+  h2
+    padding: 20px 0 0 310px
+    &:before
+      left: 310px
+  .services-box
+    padding: 0 0 0 130px
+    .img
+      img
+        width: 100%
+        height: auto
+        max-width: 100%
+    .text
+      padding: 0 0 0 118px
+    .icon-design
+      left: -130px
+
+//section about
+.section-about-wrapper
+  padding: 0
+  z-index: 2
+  background: #263C49
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    background: url("../img/bg6.png") no-repeat center bottom
+      size: cover
+    opacity: .3
+    mix-blend-mode: multiply
+  .container
+    color: #fff
+  h2
+    color: #fff
+
+.section-about
+  overflow: hidden
+  position: relative
+  padding: 110px 0 0
+  .container
+    align-items: flex-start
+    flex-direction: row
+    z-index: 2
+    .image
+      width: 610px
+      margin: 0 0 0 -15%
+    .text
+      width: calc(100% - 600px)
+      margin: 95px 0 103px 0
+      font-size: 18px
+      position: relative
+      z-index: 2
+      h2
+        color: #fff
+      .description
+        line-height: 23px
+        color: #F2F2F2
+      h6
+        margin: 32px 0 0 0
+        font-weight: 600
+  .decor-logo
+    position: absolute
+    top: 110px
+    right: -30%
+    opacity: .10
+    svg
+      width: 684px
+      height: 328px
+      path
+
+        fill: #fff
+      .cl-1
+        fill: #929BA8
+  .decor-circle
+    position: absolute
+    left: -30%
+    bottom: -25%
+    opacity: .2
+    svg
+      width: 642px
+      height: 642px
+      path
+        fill: #fff
+
+.section-our-team
+  background: rgba(255, 255, 255, 0.1)
+  padding: 75px 0 250px
+  .container
+    color: $black
+    h2
+      color: #fff
+
+.our-team-box
+  align-items: stretch
+  .reviews-user
+    width: 382px
+    .photo
+      width: 211px
+      height: 211px
+  .reviews-message
+    width: calc(100% - 382px)
+    padding: 76px 32px 96px 48px
+//
+//.our-team-arrows
+//  .arrow-slide
+//    svg
+//      path
+//        fill: $yellow
+
+//page-contacts
+.page-contacts
+  position: relative
+  background: #263C49
+  .contacts
+    padding: 30px 0 0 0
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 50px
+      background: linear-gradient(to bottom, rgba(0,54,71,1) 0%,rgba(37,60,73,1) 100%)
+    .contacts-box
+      width: 32%
+
+.contacts-section
+  background: url("../img/bg1.jpeg") no-repeat center 40%
+    size: cover
+  padding: 150px 0
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: -5px
+    background: url("../img/decor1.png") no-repeat center -1px
+      size: contain
+    width: 100%
+    height: 100%
+    transform: rotate(180deg) scale(-1,1)
+    z-index: 1
+  .container
+    color: $black
+    justify-content: space-between
+    z-index: 2
+    h2
+      color: #14141E
+    .contacts-section__text
+      max-width: 512px
+      p
+        color: $black
+        line-height: 23px
+
+.btn-mobile-menu
+  display: none
+  align-items: center
+  justify-content: center
+  width: 48px
+  height: 48px
+  border: 2px solid #3EA89A
+    radius: 50%
+  box-sizing: border-box
+  padding: 11px
+  cursor: pointer
+  span
+    position: relative
+    width: 22px
+    height: 2px
+    background: #3EA89A
+    &:before, &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 2px
+      background: #3EA89A
+    &:before
+      top: -6px
+    &:after
+      bottom: -6px
+
+.btn-mobile-menu.open
+  span
+    background: transparent
+    &:after
+      bottom: 0
+      transform: rotate(45deg)
+    &:before
+      top: 0
+      transform: rotate(-45deg)
+
+.d-mobile
+  display: none
+
+a.left-arrow
+  display: none
+  //position: absolute
+  //top: 50%
+  //transform: translate(0,-50%)
+  z-index: 2
+  position: relative
+  //left: 0
+  svg
+    width: 20px
+    height: 12px
+    transform: rotate(90deg)
+    path
+      fill: #3EA89A
+
+a.right-arrow
+  position: relative
+  //top: 50%
+  //transform: translate(0,-50%)
+  z-index: 2
+  //right: 0
+  svg
+    width: 20px
+    height: 12px
+    transform: rotate(-90deg)
+    path
+      fill: #3EA89A
+
+.table-wrapper
+  width: 100%
+
+.price-hidden
+  display: none
+
+.modal__div
+  position: fixed
+  width: 585px
+  height: 100%
+  top: 45%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 101
+  overflow: auto
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  display: none
+  opacity: 0
+  .modal__close
+    position: absolute
+    right: 27px
+    top: 27px
+    width: 19px
+    height: 19px
+    cursor: pointer
+  .modal__wrapper
+    background: #fff
+    width: 100%
+    height: 100%
+    overflow: auto
+    margin: 50px auto
+    padding: 30px 40px
+    box-sizing: border-box
+    position: relative
+    border-radius: 5px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    max-height: 560px
+    h3
+      text-align: center
+      margin: 0 auto 15px
+      font-size: 32px
+      line-height: 39px
+      font-weight: bold
+      color: #14141E
+      max-width: 378px
+    p
+      text-align: center
+      max-width: 285px
+      color: #14141E
+      font-size: 18px
+      line-height: 24px
+      margin: 0 auto
+  .check-img
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: center
+
+
+.overlay
+  z-index: 100
+  position: fixed
+  background-color: #000
+  opacity: 0.8
+  -moz-opacity: 0.8
+  filter: alpha(opacity = 80)
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  cursor: pointer
+  display: none
+
+//[class*="ymaps-2"][class*="-ground-pane"]
+//  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale")
+//  -webkit-filter: grayscale(100%)
+
+@import "media"
+// Всегда в конце
